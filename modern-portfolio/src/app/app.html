@@ -4,7 +4,7 @@
 <!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * to get started with your project! * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <style>
@@ -185,7 +185,7 @@
     <mat-toolbar class="navbar" color="primary">
       <div class="nav-content">
         <div class="nav-brand">
-          <h2 class="brand-text">👩‍💻 Feven Muluken Ejigu</h2>
+          <h2 class="brand-text">👩‍💻 <span class="brand-name">Feven</span></h2>
         </div>
         <nav class="nav-links">
           <button mat-button (click)="scrollToSection('home')" class="nav-link">
@@ -269,7 +269,7 @@
       </div>
       <div class="hero-image">
         <div class="profile-placeholder">
-          <mat-icon class="profile-icon">person</mat-icon>
+          <img [src]="image" alt="Feven Muluken Ejigu" (error)="onImageError($event)" (load)="onImageLoad()" />
         </div>
       </div>
     </div>
@@ -285,7 +285,7 @@
       <div class="about-content">
         <div class="about-image">
           <div class="profile-placeholder">
-            <mat-icon class="profile-icon">person</mat-icon>
+            <img [src]="image" alt="Feven Muluken Ejigu" (error)="onImageError($event)" (load)="onImageLoad()" />
           </div>
         </div>
         <div class="about-text">
@@ -367,14 +367,13 @@
         <mat-icon class="section-icon">code</mat-icon>
         💻 Coding Training & Skills
       </h2>
-      <div class="skills-intro">
-        <p>Fully supported by the Delac Foundation via SheCodes Plus, an intensive 4-month coding program</p>
-      </div>
       <div class="skills-grid">
-        <div class="skill-item" *ngFor="let skill of skills">
+        <div class="skill-item" *ngFor="let skill of skills; let i = index">
           <div class="skill-header">
             <span class="skill-name">{{ skill.name }}</span>
-            <span class="skill-percentage">{{ skill.level }}%</span>
+            <span class="skill-percentage">
+              <span class="percentage-counter" [attr.data-target]="skill.level">0</span>%
+            </span>
           </div>
           <div class="skill-bar">
             <div class="skill-progress" [style.width.%]="skill.level"></div>
@@ -536,48 +535,8 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>👩‍💻 Feven Muluken Ejigu</h3>
-          <p>Software Engineering Student & Fullstack Developer</p>
-          <p>📍 {{ education.location }}</p>
-        </div>
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <div class="footer-links">
-            <a (click)="scrollToSection('home')">Home</a>
-            <a (click)="scrollToSection('about')">About</a>
-            <a (click)="scrollToSection('education')">Education</a>
-            <a (click)="scrollToSection('skills')">Skills</a>
-            <a (click)="scrollToSection('projects')">Projects</a>
-            <a (click)="scrollToSection('achievements')">Achievements</a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h4>Connect</h4>
-          <div class="footer-social">
-            <button mat-icon-button (click)="openSocialLink('linkedin')" class="social-btn" matTooltip="LinkedIn">
-              <mat-icon>linkedin</mat-icon>
-            </button>
-            <button mat-icon-button (click)="openSocialLink('github')" class="social-btn" matTooltip="GitHub">
-              <mat-icon>code</mat-icon>
-            </button>
-            <button mat-icon-button (click)="openSocialLink('telegram')" class="social-btn" matTooltip="Telegram">
-              <mat-icon>telegram</mat-icon>
-            </button>
-            <button mat-icon-button (click)="openSocialLink('instagram')" class="social-btn" matTooltip="Instagram">
-              <mat-icon>camera_alt</mat-icon>
-            </button>
-            <button mat-icon-button (click)="openSocialLink('shecodes')" class="social-btn"
-              matTooltip="SheCodes Profile">
-              <mat-icon>verified</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Feven Muluken Ejigu. All rights reserved. | Supported by <a (click)="openSocialLink('delac')"
-            class="footer-link">Delac Foundation</a></p>
+        <p>&copy; 2024 Feven Muluken Ejigu. All rights reserved.</p>
       </div>
     </div>
   </footer>
