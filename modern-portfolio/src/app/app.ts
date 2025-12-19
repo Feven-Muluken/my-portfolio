@@ -44,6 +44,8 @@ export class App implements OnInit, AfterViewInit {
   protected socialLinks = {
     linkedin: 'https://www.linkedin.com/in/feven-muluken-542281323/',
     github: 'https://github.com/Feven-Muluken',
+    AA: 'https://www.google.com/maps/place/Addis+Ababa/@8.9631768,38.7781448,12z/data=!3m1!4b1!4m6!3m5!1s0x164b85cef5ab402d:0x8467b6b037a24d49!8m2!3d9.0191936!4d38.7524635!16zL20vMGR0dGY?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D',
+    AAU: 'https://www.aau.edu.et/',
     telegram: 'https://t.me/veben5',
     instagram: 'https://www.instagram.com/fevt_5/',
     email: 'fivamuluken@gmail.com',
@@ -51,80 +53,114 @@ export class App implements OnInit, AfterViewInit {
     delac: 'https://delac.foundation/'
   };
 
-  // Enhanced Skills Data for Fullstack Developer
+   // education
+  protected education = {
+    main: {
+      description: 'Fourth-year Software Engineering and AI streem student at Addis Ababa University',
+      location: 'Addis Ababa, Ethiopia',
+      relevantCourses: [
+        'AI and ML',
+        'HCI',
+        'Software Architecture',
+        'Database Systems',
+        'Web Development'
+      ],
+    },
+    internatinalexp: {
+      description: 'Frontier Tech Leaders Ethiopia:',   
+      about:' Remote Machine Learning Bootcamp with Intensive training in AI, Machine Learning, and Deep Learning fundamentals.'   
+    },
+    shecodes: {
+      description: 'Frontend website development using CSS, HTML and Javascript.',    
+      foundation: 'Supported by Delac Foundation'  
+    },
+    location: 'Remote',
+  };
+
+  //  Skills Data
   protected skills = [
-    { name: 'HTML5 & Semantic Markup', level: 95 },
-    { name: 'CSS3 & Responsive Design', level: 90 },
+    { name: 'HTML5 / CSS3', level: 95 },
     { name: 'JavaScript (ES6+)', level: 88 },
-    { name: 'React.js', level: 85 },
+    { name: 'Python', level: 82 },
+    { name: 'Bootstrap and Tailwind CSS', level: 80 },
+    { name: 'React', level: 85 },
     { name: 'Angular', level: 80 },
+    { name: 'Node express', level: 90 },
     { name: 'Django', level: 75 },
-    { name: 'Bootstrap', level: 85 },
-    { name: 'Tailwind CSS', level: 80 },
-    { name: 'RESTful APIs', level: 80 },
-    { name: 'Git & GitHub', level: 85 },
-    { name: 'VS Code & Dev Tools', level: 90 },
+    { name: 'RESTful APIs', level: 90 },
+    { name: 'VS Code, Git & GitHub and Deployment', level: 90 },
     { name: 'Web Hosting & Deployment', level: 75 },
     { name: 'AI Integration', level: 70 },
     { name: 'Accessibility (WCAG)', level: 85 },
     { name: 'Problem Solving', level: 90 }
+  ] 
+  protected certifications = [
+    {
+      certificate: 'SheCodes',
+      link: 'https://drive.google.com/file/d/1mnPMYtfsb5v5bKfWUXhRB80PsirJQQho/view?usp=sharing'
+    } ,
+    {
+      certificate: 'Corsera',
+      link: 'https://drive.google.com/file/d/1ITK_hXvkCUGaU03gUpFhH65KjXlhbKnn/view?usp=sharing'
+    } ,
+    {
+      certificate: 'FTL',
+      link: 'https://drive.google.com/file/d/1Kc0HvxdnyVlY8zdi3ULgVBKGTlOrcsxV/view?usp=sharing'
+    } ,
+     {
+      certificate: 'Graphics design',
+      link: 'https://drive.google.com/file/d/1hlCiSRLNZyJh6m_7_2gj4qnDfRVSd2Lo/view?usp=sharing'
+     }
   ];
 
-  // Enhanced Projects Data
+  //  Projects Data
   protected projects = [
     {
+      title: 'SMS campaign Platform',
+      description: 'A full-stack SMS marketing platform for Afroel company using the MERN stack and TailwindCSS. Implemented campaign creation, contact management, and bulk messaging features with real-time delivery analytics.',
+      icon: 'message',
+      technologies: ['MERN stack', 'TailwindCSS', 'Africa\'s talking API', 'bycript and JWT for authorization and autentication,'],
+      link: 'https://ai-chat.example.com',
+      github: 'https://github.com/Feven-Muluken/SMS-campagn'
+    },
+    {
       title: 'Accessible Weather Application',
-      description: 'A comprehensive weather app designed with accessibility in mind, featuring real-time data, voice support, and WCAG compliance.',
+      description: 'A comprehensive weather app designed with accessibility in mind and featuring real-time data.',
       icon: 'wb_sunny',
-      technologies: ['React', 'Weather API', 'Accessibility', 'CSS3'],
-      link: 'https://weather-app.example.com',
-      github: 'https://github.com/feven-muluken/accessible-weather-app'
+      technologies: ['Javascript', 'Html', 'CSS3', 'Weather API', 'Accessibility'],
+      link: 'https://wheather-application-virid.vercel.app/',
+      github: 'https://github.com/Feven-Muluken/wheather-application'
+    },
+    {
+      title: 'Ecommerce application',
+      description: 'A secure e-commerce backend system with role-based access control, and transaction-safe inventory management with robust error handling.',
+      icon: 'web',
+      technologies: ['Django', 'JWT-based authentication', 'SQLite'],
+      link: 'https://feven-portfolio.example.com',
+      github: 'https://github.com/Feven-Muluken/ecommerce_backend'
     },
     {
       title: 'Task Management System',
-      description: 'A full-featured productivity tool with task organization, reminders, progress tracking, and collaborative features.',
+      description: 'Full-Stack personal project with task organization, notifications, progress tracking and collaborative features.',
       icon: 'task_alt',
-      technologies: ['JavaScript', 'Local Storage', 'CSS3', 'Responsive Design'],
-      link: 'https://task-manager.example.com',
+      technologies: ['MERN stack', 'Local Storage', 'tailwindCSS', 'Responsive Design'],
+      link: 'https://task-manager.vercel.com',
       github: 'https://github.com/feven-muluken/task-management-system'
     },
     {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio showcasing projects, skills, and achievements with Material Design principles.',
+      title: 'To Do List Application',
+      description: 'A modern front end aaplication with responsive, search icon ',
       icon: 'web',
       technologies: ['Angular', 'Material Design', 'TypeScript', 'Responsive'],
-      link: 'https://feven-portfolio.example.com',
-      github: 'https://github.com/feven-muluken/portfolio-website'
+      link: 'https://to-do-list-app-nu-one.vercel.app/',
+      github: 'https://github.com/Feven-Muluken/To-Do-List-app'
     },
-    {
-      title: 'AI-Powered Chat Interface',
-      description: 'An intelligent chat application integrating AI capabilities for enhanced user interaction and support.',
-      icon: 'smart_toy',
-      technologies: ['React', 'AI Integration', 'API Development', 'JavaScript'],
-      link: 'https://ai-chat.example.com',
-      github: 'https://github.com/feven-muluken/ai-chat-interface'
-    }
-  ];
-
-  // Education & Background
-  protected education = {
-    current: 'Third-year Software Engineering student at Addis Ababa University',
-    exchange: 'Studied at Ningbo University (Exchange Program)',
-    location: 'Addis Ababa, Ethiopia',
-    foundation: 'Fully supported by Delac Foundation'
-  };
-
-  // Certifications
-  protected certifications = [
-    'SheCodes Basics & Basics Add-on',
-    'SheCodes Plus & Plus Add-on',
-    'SheCodes Plus AI',
-    'Featured in SheCodes Hall of Fame'
+    
   ];
 
   // Achievements
   protected achievements = [
-    'Featured in SheCodes Hall of Fame as high-performing graduate',
+    'Graduating FTL bootcomp',
     'Earned top ratings (4-5 stars) across multiple SheCodes workshops',
     'Active on GitHub with ~40 repositories showcasing diverse projects',
     'Passionate about developing accessible applications for people with disabilities'
@@ -147,7 +183,7 @@ export class App implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    // Initialize any component logic
+    // Initialize component logic
   }
 
   ngAfterViewInit() {
@@ -162,6 +198,7 @@ export class App implements OnInit, AfterViewInit {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             this.animatePercentageCounters();
+            skillsSection.classList.add('animate-skills');
             observer.unobserve(entry.target);
           }
         });

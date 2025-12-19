@@ -290,14 +290,17 @@
         </div>
         <div class="about-text">
           <p class="about-description">
-            I'm Feven Muluken Ejigu, a dedicated Software Engineering student passionate about creating accessible,
-            user-friendly applications. My journey in tech began with a spark of curiosity and has grown into a
-            deep passion for problem-solving and creative challenges.
+            I’m Feven. I’m studying Software Engineering because I love the puzzle of it figuring out how to make
+            technology not
+            just functional, but genuinely welcoming and easy for people to use. I geek out over building applications
+            that are intuitive, inclusive, and truly helpful. For me, great code is code that
+            works for everyone.
+
           </p>
           <p class="about-description">
             I thrive in collaborative environments and am committed to making a positive impact through technology.
-            With hands-on experience from intensive coding programs and a strong foundation in both front-end and
-            back-end development, I'm always eager to learn, grow, and contribute to meaningful projects.
+            With hands-on experience from intensive coding programs and a strong foundation in both frontend and
+            backend development, I'm always at my best in learning, growing, and contributeing on meaningful projects.
           </p>
           <div class="about-stats">
             <div class="stat">
@@ -313,7 +316,7 @@
               <p>Accessibility Focus</p>
             </div>
             <div class="stat">
-              <h3>3rd</h3>
+              <h3>4th</h3>
               <p>Year Student</p>
             </div>
           </div>
@@ -327,7 +330,7 @@
     <div class="container">
       <h2 class="section-title">
         <mat-icon class="section-icon">school</mat-icon>
-        👩‍🎓 Background & Education
+        Education
       </h2>
       <div class="education-content">
         <div class="education-card">
@@ -335,25 +338,27 @@
             <mat-icon class="education-icon">school</mat-icon>
             <h3>Current Education</h3>
           </div>
-          <p>{{ education.current }}</p>
-          <p><strong>Location:</strong> {{ education.location }}</p>
+          <p>{{ education.main.description }}</p>
+          <p><strong>Relevant Courses: </strong>{{ education.main.relevantCourses }}</p>
+          <p><strong>Location: </strong> {{ education.main.location }}</p>
         </div>
         <div class="education-card">
           <div class="education-header">
-            <mat-icon class="education-icon">public</mat-icon>
-            <h3>International Experience</h3>
+            <a href="https://drive.google.com/file/d/1Kc0HvxdnyVlY8zdi3ULgVBKGTlOrcsxV/view?usp=sharing">
+              <h3>FTL ML Bootcamp</h3>
+            </a>
           </div>
-          <p>{{ education.exchange }}</p>
+          <p>{{ education.internatinalexp.description }}</p>
+          <p>{{ education.internatinalexp.about }}</p>
         </div>
         <div class="education-card">
           <div class="education-header">
-            <mat-icon class="education-icon">favorite</mat-icon>
-            <h3>Support & Foundation</h3>
+            <h3>SheCodes Foundation</h3>
           </div>
-          <p>{{ education.foundation }}</p>
+          <p> {{ education.shecodes.description }} </p>
           <button mat-button color="primary" (click)="openSocialLink('delac')">
             <mat-icon>open_in_new</mat-icon>
-            Visit Delac Foundation
+            Delac Foundation
           </button>
         </div>
       </div>
@@ -365,7 +370,7 @@
     <div class="container">
       <h2 class="section-title">
         <mat-icon class="section-icon">code</mat-icon>
-        💻 Coding Training & Skills
+        Skills
       </h2>
       <div class="skills-grid">
         <div class="skill-item" *ngFor="let skill of skills; let i = index">
@@ -376,16 +381,18 @@
             </span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" [style.width.%]="skill.level"></div>
+            <div class="skill-progress" [style.--target-width.%]="skill.level"></div>
           </div>
         </div>
       </div>
       <div class="certifications-section">
-        <h3>🏆 Certifications</h3>
+        <h3>Certifications</h3>
         <div class="certifications-grid">
           <div class="certification-item" *ngFor="let cert of certifications">
-            <mat-icon class="cert-icon">verified</mat-icon>
-            <span>{{ cert }}</span>
+            <button mat-button color="primary" (click)="openProject(cert.link)">
+              <mat-icon class="cert-icon">verified</mat-icon>
+              <span>{{ cert.certificate }}</span>
+            </button>
           </div>
         </div>
       </div>
@@ -396,8 +403,8 @@
   <section id="projects" class="section">
     <div class="container">
       <h2 class="section-title">
-        <mat-icon class="section-icon">work</mat-icon>
-        🚀 Featured Projects
+        <!-- <mat-icon class="section-icon">work</mat-icon> -->
+        Projects
       </h2>
       <div class="projects-grid">
         <div class="project-card" *ngFor="let project of projects">
@@ -431,11 +438,11 @@
     <div class="container">
       <h2 class="section-title">
         <mat-icon class="section-icon">emoji_events</mat-icon>
-        🏅 Achievements & Future Goals
+        Achievements & Future Goals
       </h2>
       <div class="achievements-content">
         <div class="achievements-section">
-          <h3>🌟 Achievements</h3>
+          <h3> Achievements</h3>
           <div class="achievements-list">
             <div class="achievement-item" *ngFor="let achievement of achievements">
               <mat-icon class="achievement-icon">star</mat-icon>
@@ -444,7 +451,7 @@
           </div>
         </div>
         <div class="goals-section">
-          <h3>🚀 Future Prospects</h3>
+          <h3> Future Prospects</h3>
           <div class="goals-list">
             <div class="goal-item" *ngFor="let goal of futureGoals">
               <mat-icon class="goal-icon">rocket_launch</mat-icon>
@@ -461,7 +468,7 @@
     <div class="container">
       <h2 class="section-title">
         <mat-icon class="section-icon">email</mat-icon>
-        📧 Get In Touch
+        Get In Touch
       </h2>
       <div class="contact-content">
         <div class="contact-info">
@@ -470,16 +477,22 @@
             technology.</p>
           <div class="contact-details">
             <div class="contact-item">
-              <mat-icon>email</mat-icon>
-              <span>{{ socialLinks.email }}</span>
+              <a href="mailto:{{ socialLinks.email }}" class="decoration-none" mat-button matTooltip="Email">
+                <mat-icon>email</mat-icon>
+                <span>{{ socialLinks.email }}</span>
+              </a>
             </div>
             <div class="contact-item">
-              <mat-icon>location_on</mat-icon>
-              <span>{{ education.location }}</span>
+              <button mat-button (click)="openSocialLink('AA')" matTooltip="Addis Ababa city">
+                <mat-icon>location_on</mat-icon>
+                <span>{{ education.main.location }}</span>
+              </button>
             </div>
             <div class="contact-item">
-              <mat-icon>school</mat-icon>
-              <span>Addis Ababa University</span>
+              <button mat-button (click)="openSocialLink('AAU')" matTooltip="Addis Ababa University">
+                <mat-icon>school</mat-icon>
+                <span>Addis Ababa University</span>
+              </button>
             </div>
           </div>
           <div class="contact-social">
@@ -504,20 +517,20 @@
         <div class="contact-form">
           <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
             <mat-form-field appearance="outline" class="form-field">
-              <mat-label>Your Name</mat-label>
+              <mat-label>Name</mat-label>
               <input matInput formControlName="name" placeholder="Enter your name">
               <mat-error *ngIf="contactForm.get('name')?.hasError('required')">Name is required</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="form-field">
-              <mat-label>Your Email</mat-label>
+              <mat-label>Email</mat-label>
               <input matInput formControlName="email" placeholder="Enter your email" type="email">
               <mat-error *ngIf="contactForm.get('email')?.hasError('required')">Email is required</mat-error>
               <mat-error *ngIf="contactForm.get('email')?.hasError('email')">Please enter a valid email</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="form-field">
-              <mat-label>Your Message</mat-label>
+              <mat-label>Message</mat-label>
               <textarea matInput formControlName="message" placeholder="Enter your message" rows="5"></textarea>
               <mat-error *ngIf="contactForm.get('message')?.hasError('required')">Message is required</mat-error>
             </mat-form-field>
@@ -536,19 +549,10 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; 2024 Feven Muluken Ejigu. All rights reserved.</p>
+        <p>&copy; 2024 Feven Muluken. All rights reserved.</p>
       </div>
     </div>
   </footer>
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 <router-outlet />
